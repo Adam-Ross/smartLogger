@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
+#titleLarge {
+  text-align: center;
+  font-family: "Teko", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #f4f4f4;
+}
+
+#titleSecondary {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+  padding-top: 0;
+  font-family: "Teko", sans-serif;
+  font-style: italic;
+  color: #f4f4f4;
+}
