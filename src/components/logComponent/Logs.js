@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import "./logs.css";
 
 const Logs = () => {
   return (
