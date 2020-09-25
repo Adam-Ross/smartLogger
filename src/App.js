@@ -4,6 +4,8 @@ import AddBtn from "./components/layout/AddBtn";
 import AddLogModal from "./components/logs/AddLogModal";
 import TechListModal from "./components/techs/TechListModal";
 import AddTechModal from "./components/techs/AddTechModal";
+import { Provider } from "react-redux";
+import store from "./store";
 import EditLogModal from "./components/logs/EditLogModal";
 import "materialize-css/dist/css/materialize.min.css";
 
@@ -18,17 +20,19 @@ const App = () => {
   });
 
   return (
-    <Fragment>
-      <Searchbar />
-      <div className="container">
-        <AddBtn />
-        <EditLogModal />
-        <AddLogModal />
-        <AddTechModal />
-        <TechListModal />
-        <Logs />
-      </div>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <Searchbar />
+        <div className="container">
+          <AddBtn />
+          <EditLogModal />
+          <AddLogModal />
+          <AddTechModal />
+          <TechListModal />
+          <Logs />
+        </div>
+      </Fragment>
+    </Provider>
   );
 };
 export default App;
