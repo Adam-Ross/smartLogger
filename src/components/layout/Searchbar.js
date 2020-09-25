@@ -4,9 +4,9 @@ const Searchbar = () => {
   return (
     <nav style={{ marginBottom: "30px" }} className="blue">
       <div className="nav-wrapper">
-        <form>
+        <form autoComplete="off">
           <div className="input-field">
-            <input id="search" type="search" required />
+            <input id="search" type="search" required autoComplete="off" />
             <label className="label-icon" htmlFor="search">
               <i className="material-icons">search</i>
             </label>

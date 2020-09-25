@@ -1,4 +1,5 @@
-import { GET_LOGS, SET_LOADING, LOGS_ERROR } from "./types";
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG } from "./types";
+import { FloatingActionButton } from "materialize-css";
 
 // Actions
 // export const getLogs = () => {
@@ -23,7 +24,7 @@ export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch("/logs");
+    const res = await fetch("http://localhost:5000/logs");
     const data = await res.json();
 
     dispatch({
@@ -31,9 +32,10 @@ export const getLogs = () => async (dispatch) => {
       payload: data,
     });
   } catch (err) {
+    const msg = "Something went wrong";
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
+      payload: msg,
     });
   }
 };
@@ -43,4 +45,31 @@ export const setLoading = () => {
   return {
     type: SET_LOADING,
   };
+};
+
+export const addLog = (log) => async (dispatch) => {
+  try {
+    setLoading();
+
+    const res = await fetch("http://localhost:5000/logs", {
+      method: "POST",
+      body: JSON.stringify(log),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+
+    dispatch({
+      type: ADD_LOG,
+      payload: data,
+    });
+  } catch (err) {
+    const msg = "Something went wrong";
+    dispatch({
+      type: LOGS_ERROR,
+      payload: msg,
+    });
+  }
 };

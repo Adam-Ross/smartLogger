@@ -1,5 +1,13 @@
 {
-  "logs": [],
+  "logs": [
+    {
+      "message": "Added server confine to use on machine 007843",
+      "tech": "Paul Wall",
+      "attention": true,
+      "date": "2020-09-25T04:24:51.206Z",
+      "id": 1
+    }
+  ],
   "techs": [
     {
       "id": 1,
