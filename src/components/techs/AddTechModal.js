@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-
-const AddTechModal = () => {
+import { connect } from "react-redux";
+import { addTech } from "../../actions/techActions";
+import M from "materialize-css/dist/js/materialize.min.js";
+const AddTechModal = ({ addTech }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log(firstName, lastName);
+    const newTech = {
+      firstName,
+      lastName,
+    };
+
+    addTech(newTech);
+    M.toast({ html: `New tech: ${firstName} ${lastName} added.` });
   };
 
   return (
@@ -56,4 +64,4 @@ const AddTechModal = () => {
   );
 };
 
-export default AddTechModal;
+export default connect(null, { addTech })(AddTechModal);
