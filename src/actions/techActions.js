@@ -48,7 +48,25 @@ export const addTech = (tech) => async (dispatch) => {
   }
 };
 
-export const deleteTech = (id) => {};
+export const deleteTech = (id) => async (dispatch) => {
+  setLoading();
+
+  try {
+    await fetch(`http://localhost:5000/techs/${id}`, {
+      method: "DELETE",
+    });
+
+    dispatch({
+      type: DELETE_TECH,
+      payload: id,
+    });
+  } catch (error) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: "Something went wrong deleting the tech..",
+    });
+  }
+};
 
 export const setLoading = () => (dispatch) => {
   dispatch({

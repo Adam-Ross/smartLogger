@@ -74,38 +74,23 @@
   "techs": [
     {
       "id": 1,
-      "firstName": "Slim",
-      "lastName": "Thug"
-    },
-    {
-      "id": 2,
       "firstName": "Paul",
       "lastName": "Wall"
     },
     {
-      "id": 3,
+      "id": 2,
       "firstName": "Mike",
       "lastName": "Jones"
     },
     {
-      "id": 4,
+      "id": 3,
       "firstName": "Michael",
       "lastName": "Watts"
     },
     {
-      "id": 5,
+      "id": 4,
       "firstName": "Adam",
       "lastName": "Ross"
-    },
-    {
-      "firstName": "Henry Ray",
-      "lastName": "Spangler",
-      "id": 6
-    },
-    {
-      "firstName": "Jacob ",
-      "lastName": "Ross",
-      "id": 7
     }
   ]
 }
